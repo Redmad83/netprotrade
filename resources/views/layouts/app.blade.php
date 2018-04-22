@@ -63,6 +63,15 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+
+                                    @if(Auth::user()->isAdmin())
+                                    <li>
+                                        <a href="{{ route('admin') }}">
+                                            Admin Page
+                                        </a>
+                                    </li>
+
+                                     @endif
                                 </ul>
                             </li>
                         @endguest

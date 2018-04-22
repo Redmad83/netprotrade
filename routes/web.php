@@ -24,7 +24,7 @@ Route::get('/admin', function(){
 
     return view('admin.index');
 
-});
+})->name('admin');
 
 Route::group(['middleware' => 'admin'], function(){
 
