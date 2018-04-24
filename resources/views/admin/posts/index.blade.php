@@ -34,11 +34,11 @@
                     <td>{{$post->id}}</td>
                     <td><img height="150" src="{{$post->photo ? $post->photo->file : 'http://via.placeholder.com/140x100'}}"></td>
                     <td>{{$post->user->name}}</td>
-                    <td>{{$post->category_id}}</td>
+                    <td>{{$post->category ? $post->category->name : 'Different Category'}}</td>
                     {{--<td><img height="50" src="{{$user->photo ? $user->photo->file : 'http://via.placeholder.com/140x100'}}"></td>--}}
                     {{--<td><a href='{{route('users.edit', $user->id)}}'> {{$user->name}}</a></td>--}}
                     <td>{{$post->title}}</td>
-                    <td>{{$post->body}}</td>
+                    <td style="max-width: 300px">{{$post->body}}</td>
 
                     {{--<td>{{$post->user->name}}</td>--}}
 
