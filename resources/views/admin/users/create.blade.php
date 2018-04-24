@@ -6,6 +6,28 @@
 
 <h1>Create Users</h1>
 
+<div class="row">
+
+    @if($errors->any())
+        <div class="alert alert-danger">
+
+            <ul>
+
+                @foreach($errors->all() as $error)
+
+                    <li>{{$error}}</li>
+
+                @endforeach
+            </ul>
+
+        </div>
+
+    @endif
+
+</div>
+
+<div class="row">
+
      {!! Form::open(['method'=>'POST', 'action'=> 'AdminUsersController@store','files'=>true]) !!}
 
 
@@ -32,7 +54,7 @@
 
              <div class="form-group">
                  {!! Form::label('is_active', 'Status:') !!}
-                 {!! Form::select('is_active', array(1 => 'Active', 0=> 'Not Active'), 0 , ['class'=>'form-control'])!!}
+                 {!! Form::select('is_active', array(1 => 'Active', 0=> 'Not Active'), null , ['class'=>'form-control'])!!}
               </div>
 
 
@@ -56,20 +78,6 @@
     {!! Form::close() !!}
 
 
-    @if($errors->any())
-        <div class="alert alert-danger">
-
-            <ul>
-
-                @foreach($errors->all() as $error)
-
-                    <li>{{$error}}</li>
-
-                @endforeach
-            </ul>
-
-        </div>
-
-    @endif
+</div>
 
 @stop
